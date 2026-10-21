@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Физмат класс 3025 | Александр Вячеславович</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+  <!-- Фоновые математические символы (Плавающие) -->
+  <div class="math-bg" aria-hidden="true">
+    <span class="math-symbol" style="top: 10%; left: 5%; animation-delay: 0s;">∫</span>
+    <span class="math-symbol" style="top: 20%; left: 85%; animation-delay: 2s;">∑</span>
+    <span class="math-symbol" style="top: 60%; left: 10%; animation-delay: 4s;">∂</span>
+    <span class="math-symbol" style="top: 80%; left: 80%; animation-delay: 1s;">√</span>
+    <span class="math-symbol" style="top: 40%; left: 50%; animation-delay: 3s;">∞</span>
+    <span class="math-symbol" style="top: 75%; left: 40%; animation-delay: 5s;">∆</span>
+    <span class="math-symbol" style="top: 15%; left: 60%; animation-delay: 6s;">∇</span>
+    <span class="math-symbol" style="top: 55%; left: 90%; animation-delay: 2.5s;">λ</span>
+    <span class="math-symbol" style="top: 30%; left: 30%; animation-delay: 1.5s;">π</span>
+    <span class="math-symbol" style="top: 90%; left: 20%; animation-delay: 4.5s;">θ</span>
+  </div>
+
+  <!-- ШАПКА -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" onclick="scrollToTop(event)">
+        <div class="logo__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span class="logo__text">Физмат<span>класс</span><span class="logo__version">.OS 3025</span></span>
+      </a>
+      
+      <nav class="nav" id="nav-menu">
+        <a href="#about" class="nav__link">О школе</a>
+        <a href="#courses" class="nav__link">Курсы</a>
+        <a href="#teachers" class="nav__link">Преподаватели</a>
+        <a href="#reviews" class="nav__link">Отзывы</a>
+        <a href="#pricing" class="nav__link">Тарифы</a>
+      </nav>
+      
+      <div class="header__actions">
+        <button class="theme-btn" id="theme-toggle" title="Сменить тему">
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+        
+        <a href="#login" class="btn btn--outline hide-mobile">Войти</a>
+        <a href="#signup" class="btn btn--primary">Записаться</a>
+        
+        <button class="burger" id="burger-btn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="hero__badge-icon">🚀</span> Нейро-интерфейс активирован
+        </div>
+        <h1 class="hero__title">
+          Физмат класс
+
+          с <span class="text-gradient">Александром Вячеславовичем</span>
+        </h1>
+        <p class="hero__subtitle">
+          Подготовка к ЕГЭ, ОГЭ и олимпиадам по математике и физике. 
+          Системный подход, авторские конспекты и личная поддержка 24/7 в эпоху нейросетей и квантовых вычислений.
+        </p>
+        <div class="hero__formula">
+          <span class="formula-line">f'(x) = lim<sub>Δx→0</sub> [f(x+Δx) - f(x)] / Δx</span>
+          <span class="formula-line">∮ E·dA = Q / ε₀</span>
+        </div>
+        <div class="hero__buttons">
+          <a href="#courses" class="btn btn--primary btn--large">Выбрать курс</a>
+          <button class="btn btn--ghost btn--large" onclick="openHomeworkModal()">Сдать ДЗ (Нейро-загрузка)</button>
+        </div>
+        <div class="hero__stats"><div class="stat">
+            <span class="stat__value">10+</span>
+            <span class="stat__label">лет опыта</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">5000+</span>
+            <span class="stat__label">выпускников</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">92</span>
+            <span class="stat__label">средний балл</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero__image">
+        <div class="image-wrapper">
+          <div class="image-decoration image-decoration--1"></div>
+          <div class="image-decoration image-decoration--2"></div>
+          <div class="image-orbit"></div>
+          <div class="image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span class="image-hologram-text">HOLO-3D</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЕГУЩАЯ СТРОКА -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>МАТЕМАТИКА</span><span class="marquee__star">★</span>
+      <span>ФИЗИКА</span><span class="marquee__star">★</span>
+      <span>ПРОИЗВОДНЫЕ</span><span class="marquee__star">★</span>
+      <span>ИНТЕГРАЛЫ</span><span class="marquee__star">★</span>
+      <span>ПАРАМЕТРЫ</span><span class="marquee__star">★</span>
+      <span>ТЕНЗОРЫ</span><span class="marquee__star">★</span>
+      <span>КВАНТОВАЯ МЕХАНИКА</span><span class="marquee__star">★</span>
+      <span>ОЛИМПИАДЫ</span><span class="marquee__star">★</span>
+    </div>
+  </div>
+
+  <!-- О ШКОЛЕ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <p class="section-subtitle">Мы создали систему, которая работает на результат</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">🎯</div>
+          <h3 class="feature-card__title">Индивидуальный подход</h3>
+          <p class="feature-card__text">Учитываем уровень и темп каждого ученика. Никаких "средних" программ.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🧠</div>
+          <h3 class="feature-card__title">Нейро-методика</h3>
+          <p class="feature-card__text">Разработана на основе когнитивной психологии для максимального усвоения.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">📊</div>
+          <h3 class="feature-card__title">Прозрачная аналитика</h3>
+          <p class="feature-card__text">Родители видят прогресс в личном кабинете в реальном времени.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🛡️</div>
+          <h3 class="feature-card__title">Гарантия результата</h3>
+          <p class="feature-card__text">Если не сдадите на 80+, вернем деньги. Прописано в договоре.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КУРСЫ -->
+  <section class="courses" id="courses">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Наши курсы</h2>
+        <p class="section-subtitle">Выбери свой путь к высоким баллам</p>
+      </div>
+      
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-card__header">
+            <span class="course-badge">Хит продаж</span>
+            <h3 class="course-title">ЕГЭ Математика (Профиль)</h3>
+          </div>
+          <div class="course-formula">∫ f(x)dx</div>
+          <ul class="course-features">
+            <li>Полный курс теории</li>
+            <li>Разбор всех типов задач</li>
+            <li>Домашние задания с проверкой</li>
+            <li>Пробные экзамены</li>
+          </ul>
+          <div class="course-card__footer">
+            <span class="course-price">3 990 ₽ / мес</span>
+            <button
+
+
+class="btn btn--primary">Подробнее</button>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card__header">
+            <span class="course-badge">Новинка</span>
+            <h3 class="course-title">ЕГЭ Физика</h3>
+          </div>
+          <div class="course-formula">F = ma</div>
+          <ul class="course-features">
+            <li>Механика, Термодинамика, Электричество</li>
+            <li>Практика по задачам с параметром</li>
+            <li>Авторские лайфхаки для второй части</li>
+            <li>Индивидуальные созвоны</li>
+          </ul>
+          <div class="course-card__footer">
+            <span class="course-price">4 500 ₽ / мес</span>
+            <button class="btn btn--primary">Подробнее</button>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-card__header">
+            <span class="course-badge">ОГЭ</span>
+            <h3 class="course-title">ОГЭ Математика</h3>
+          </div>
+          <div class="course-formula">x² + y² = r²</div>
+          <ul class="course-features">
+            <li>Базовая и сложная часть</li>
+            <li>Геометрия с нуля</li>
+            <li>Еженедельные тесты</li>
+            <li>Поддержка куратора</li>
+          </ul>
+          <div class="course-card__footer">
+            <span class="course-price">2 900 ₽ / мес</span>
+            <button class="btn btn--primary">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРЕПОДАВАТЕЛИ -->
+  <section class="teachers" id="teachers">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Твой наставник</h2>
+        <p class="section-subtitle">Эксперт с опытом работы в ведущих школах</p>
+      </div>
+      
+      <div class="teacher-profile">
+        <div class="teacher-avatar">
+          <div class="teacher-avatar__placeholder">АВ</div>
+          <div class="teacher-avatar__ring"></div>
+        </div>
+        <div class="teacher-info">
+          <h3 class="teacher-name">Александр Вячеславович</h3>
+          <p class="teacher-role">Основатель «Физмат класса» • К.ф.-м.н.</p>
+          <p class="teacher-bio">
+            Более 10 лет преподаю математику и физику. Подготовил более 300 учеников, 
+            которые поступили в МГУ, МФТИ, ВШЭ и другие топовые вузы. 
+            Моя миссия — сделать сложное простым и показать, что физика и математика 
+            могут быть увлекательными.
+          </p>
+          <div class="teacher-tags">
+            <span class="tag">МГУ</span>
+            <span class="tag">Кандидат физ-мат наук</span>
+            <span class="tag">Эксперт ЕГЭ</span>
+            <span class="tag tag--neon">TensorFlow Physics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ОТЗЫВЫ -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Отзывы учеников</h2>
+        <p class="section-subtitle">Реальные истории успеха</p>
+      </div>
+      
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-avatar">М</div>
+            <div>
+              <div class="review-author">Мария К.</div>
+              <div class="review-date">Выпускница 2024</div>
+            </div>
+            <div class="review-rating">★★★★★</div>
+          </div>
+          <p class="review-text">«Сдала ЕГЭ по физике на 96 баллов! Александр Вячеславович объясняет так, что даже сложные темы становятся понятными. Огромное спасибо!»</p>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-avatar">Д</div>
+            <div>
+              <div class="review-author">Дмитрий С.</div>
+              <div class="review-date">Выпускник 2023</div>
+            </div>
+            <div class="review-rating">★★★★★</div>
+          </div>
+          <p class="review-text">«Математика всегда была для меня тёмным
+
+
+лесом, но здесь я наконец-то понял, как решать параметры. Поступил на бюджет в МФТИ!»</p>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-avatar">А</div>
+            <div>
+              <div class="review-author">Анна Т.</div>
+              <div class="review-date">Родитель</div>
+            </div>
+            <div class="review-rating">★★★★★</div>
+          </div>
+          <p class="review-text">«Сын занимался год, результат превзошел ожидания. Отдельно отмечу личный кабинет — я всегда видела его прогресс и оценки».</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ТАРИФЫ -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Тарифы</h2>
+        <p class="section-subtitle">Выбери подходящий формат обучения</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 class="pricing-title">Самостоятельный</h3>
+          <div class="pricing-price">1 990 ₽<span>/мес</span></div>
+          <ul class="pricing-features">
+            <li>Доступ к записям вебинаров</li>
+            <li>Конспекты и методички</li>
+            <li>Домашние задания</li>
+          </ul>
+          <button class="btn btn--outline btn--full">Выбрать</button>
+        </div>
+        
+        <div class="pricing-card pricing-card--featured">
+          <div class="pricing-badge">Рекомендуем</div>
+          <h3 class="pricing-title">С куратором</h3>
+          <div class="pricing-price">3 990 ₽<span>/мес</span></div>
+          <ul class="pricing-features">
+            <li>Всё из «Самостоятельного»</li>
+            <li>Проверка ДЗ куратором</li>
+            <li>Чат с куратором</li>
+            <li>Пробники с разбором</li>
+          </ul>
+          <button class="btn btn--primary btn--full">Выбрать</button>
+        </div>
+        
+        <div class="pricing-card">
+          <h3 class="pricing-title">С экспертом</h3>
+          <div class="pricing-price">6 990 ₽<span>/мес</span></div>
+          <ul class="pricing-features">
+            <li>Всё из «С куратором»</li>
+            <li>Личные созвоны с преподавателем</li>
+            <li>Индивидуальный план</li>
+            <li>Приоритетная поддержка 24/7</li>
+          </ul>
+          <button class="btn btn--outline btn--full">Выбрать</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container faq-container">
+      <div class="section-header">
+        <h2 class="section-title">Частые вопросы</h2>
+      </div>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Как проходят занятия?</summary>
+        <div class="faq-answer">
+          <p>Занятия проходят в формате онлайн-вебинаров с живым общением. Все уроки записываются, и вы можете пересмотреть их в любое время в личном кабинете.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Что если я не успеваю смотреть вебинары в прямом эфире?</summary>
+        <div class="faq-answer">
+          <p>Ничего страшного! Записи сохраняются навсегда. Вы можете смотреть их в удобное время и задавать вопросы в чате поддержки.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary class="faq-question">Есть ли гарантия возврата денег?</summary>
+        <div class="faq-answer">
+          <p>Да, если в течение первых 14 дней вы поймете, что формат вам не подходит, мы вернем 100% стоимости без лишних вопросов.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="cta__title">Начни свой путь к высоким баллам сегодня</h2>
+      <p class="cta__text">Первое занятие — бесплатно. Оцени качество обучения без риска.</p>
+      <a href="#signup" class="btn btn--primary btn--large">Записаться на пробное</a>
+    </div>
+  </section>
+
+  <!-- ПОДВАЛ -->
+  <footerclass="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo logo--footer">
+          <div class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+          <span class="logo__text">Физмат<span>класс</span></span>
+        </a>
+        <p class="footer__desc">Онлайн-школа подготовки к экзаменам по физике и математике. Учим думать, а не зубрить.</p>
+      </div>
+      
+      <div class="footer__links">
+        <div class="footer__column">
+          <h4>Обучение</h4>
+          <a href="#courses">Курсы</a>
+          <a href="#pricing">Тарифы</a>
+          <a href="#teachers">Преподаватели</a>
+        </div>
+        <div class="footer__column">
+          <h4>Компания</h4>
+          <a href="#about">О нас</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#">Контакты</a>
+        </div>
+        <div class="footer__column">
+          <h4>Документы</h4>
+          <a href="#">Оферта</a>
+          <a href="#">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <span>© 3025 Физмат класс. Все права защищены.</span>
+        <span>Designed in Zero-Gravity Environment</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ СДАЧИ ДЗ -->
+  <div class="modal" id="homework-modal">
+    <div class="modal__overlay" onclick="closeHomeworkModal()"></div>
+    <div class="modal__content">
+      <button class="modal__close" onclick="closeHomeworkModal()">×</button>
+      <h3 class="modal__title">Сдача домашнего задания</h3>
+      <p class="modal__desc">Загрузите фото или PDF с решением. Нейросеть Александра Вячеславовича проверит его в течение 24 часов.</p>
+      
+      <div class="upload-zone" id="upload-zone">
+        <div class="upload-zone__icon">📁</div>
+        <div class="upload-zone__text">Перетащите файл сюда или нажмите для выбора</div>
+        <input type="file" id="file-input" class="upload-zone__input" accept=".pdf,.jpg,.jpeg,.png">
+      </div>
+      
+      <div class="upload-progress" id="upload-progress">
+        <div class="upload-progress__bar" id="progress-bar"></div>
+        <span class="upload-progress__text" id="progress-text">0%</span>
+      </div>
+
+      <button class="btn btn--primary btn--full" id="submit-hw-btn" disabled>Отправить на проверку</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
